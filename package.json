@@ -4,7 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "clean": "rm package-lock.json && rm -r node_modules"
+    "clean": "rm package-lock.json && rm -r node_modules",
+    "lighthouse": "lighthouse https://app.local --view --preset=desktop",
+    "compose-pull": "docker-compose pull",
+    "compose-up": "docker-compose up",
+    "watch": "watch 'gulp' ./assets/src",
+    "dev": "npm run compose-pull && (gulp watch & npm run compose-up)"
   },
   "repository": {
     "type": "git",
